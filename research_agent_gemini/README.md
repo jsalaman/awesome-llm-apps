@@ -10,7 +10,7 @@ A streamlined multi-phase research agent built with **Google's Interactions API*
 - **🎨 Auto-Generated Infographics**: Creates whiteboard-style TL;DR summary at the top of every report
 - **🔄 Stateful Conversations**: Demonstrates `previous_interaction_id` for maintaining context across phases
 - **⚡ Background Execution**: Async research execution with progress tracking
-- **📥 Export Reports**: Download comprehensive research reports as markdown files
+- **📥 Export Reports**: Download comprehensive research reports as Markdown, PDF, or DOCX files
 
 ## 🎯 How It Works
 
@@ -39,7 +39,7 @@ User Goal
 1. **Gemini 3 Pro** synthesizes findings into an executive report
 2. **Gemini 3 Pro Image** automatically generates a whiteboard TL;DR infographic
 3. Report displays with infographic at the top, followed by full text
-4. Download as markdown
+4. Download as Markdown, PDF, or DOCX
 
 ## 🛠️ Tech Stack
 
@@ -57,8 +57,8 @@ User Goal
 1. Clone the GitHub repository
 
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd advanced_ai_agents/single_agent_apps/research_agent_gemini_interaction_api
+git clone <your-new-repo-url>
+cd research_agent_gemini
 ```
 
 2. Install the required dependencies:

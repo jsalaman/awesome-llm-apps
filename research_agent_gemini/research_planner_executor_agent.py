@@ -6,6 +6,7 @@ import time
 import re
 import streamlit as st
 from google import genai
+from utils import generate_pdf, generate_docx
 
 # Constants
 MODEL_PLANNER = "gemini-3-flash-preview"
@@ -220,7 +221,24 @@ def main():
             st.divider()
 
         st.markdown(st.session_state.synthesis_text)
-        st.download_button("📥 Download Report", st.session_state.synthesis_text, "research_report.md", "text/markdown")
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.download_button("📥 Download MD", st.session_state.synthesis_text, "research_report.md", "text/markdown")
+        with col2:
+            st.download_button(
+                "📥 Download PDF",
+                generate_pdf(st.session_state.synthesis_text),
+                "research_report.pdf",
+                "application/pdf"
+            )
+        with col3:
+            st.download_button(
+                "📥 Download DOCX",
+                generate_docx(st.session_state.synthesis_text),
+                "research_report.docx",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            )
 
     st.divider()
     st.caption("[Gemini Interactions API](https://ai.google.dev/gemini-api/docs/interactions)")
